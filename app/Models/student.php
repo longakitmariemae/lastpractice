@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 class student extends Model
 {
      use HasFactory;
-    protected $table = '3a_tbl';
+    protected $table = 'student_tbl';
     protected $primarykey = 'id';
     protected $fillable = [
         'fname',
