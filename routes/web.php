@@ -16,8 +16,8 @@ Route::middleware('auth')->group(function () {
     Route::get('users', [\App\Http\Controllers\UserController::class, 'index'])->name('users.index');
 
     //student management
-    Route::get('students', [\App\Http\Controllers\studentmngtController::class, 'index'])->name('student.index');
-    route::get('students/create', [\App\Http\Controllers\studentmngtController::class, 'create'])->name('student.create');
+    Route::get('students', [\App\Http\Controllers\StudentController::class, 'index'])->name('student.index');
+    Route::get('students/create', [\App\Http\Controllers\StudentController::class, 'create'])->name('student.create');
 
     Route::get('profile', [\App\Http\Controllers\ProfileController::class, 'show'])->name('profile.show');
     Route::put('profile', [\App\Http\Controllers\ProfileController::class, 'update'])->name('profile.update');
