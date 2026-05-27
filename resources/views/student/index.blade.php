@@ -24,17 +24,26 @@
 
                     <div class="card">
                         <div class="card-body p-0">
-
+                            <a href="{{ route('students.create') }}" class="btn btn-success mb-3">Add New Student</a>
                             <table class="table">
                                 <thead>
                                 </thead>
                                 <tbody>
-                                 {{-- @foreach($student) --}}
+                                 @foreach($students as $student)
                                     <tr>
-                                        <td>Matthew Bartolomeo</td>
-                                        <td>matthewbartolomeo@sample.com</td>
+                                        <td>{{ $student->id }}</td>
+                                        <td>{{ $student->name }}</td>
+                                        <td>{{ $student->email }}</td>
+                                        <td>{{ $student->course }}</td>
+                                        <td>{{ $student->enrollment_date }}</td>
                                     </tr>
-                                {{-- @endforeach --}}
+                                    <a href="{{ route('students.edit', $student->id) }}" class="btn btn-primary">Edit</a>
+                                    <form action="{{ route('students.destroy', $student->id) }}" method="POST" style="display:inline-block;">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="btn btn-danger">Delete</button>
+                                    </form>
+                                @endforeach
                                 </tbody>
                             </table>
                         </div>
