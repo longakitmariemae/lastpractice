@@ -18,6 +18,8 @@ return new class extends Migration
             $table->string('mname');
             $table->string('add');
             $table->date('dobirth');
+            $table->timestamp('created_at')->nullable();
+            $table->timestamp('updated_at')->nullable();
             $table->timestamps();
         });
     }
